@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+		<meta name="apple-mobile-web-app-capable" content="yes">
 	<title>WebNES</title>
     <meta charset="utf-8"/>
 	<meta http-equiv="Cache-Control" content="no-store" /> <!-- stops chrome from caching -->
@@ -28,6 +29,30 @@
 	  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0&appId=310800822454793";
 	  fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
+
+	<script>
+		var dummy = function(ev) {
+  		ev.preventDefault();
+  		return false;
+		};
+
+		function detectMob() {
+			const toMatch = [
+					/Android/i,
+					/webOS/i,
+					/iPhone/i,
+					/iPad/i,
+					/iPod/i,
+					/BlackBerry/i,
+					/Windows Phone/i
+			];
+
+			return toMatch.some((toMatchItem) => {
+					return navigator.userAgent.match(toMatchItem);
+			});
+		}
+
+	</script>
 	
 	<div id="content" class="normal" style="width:100%; height:100%; display:inline-block">
 		<div id="infoPanel" class="infoPanel">
@@ -85,7 +110,63 @@
 					</datalist>
 				</select>
 			</p>
+
 			</div>
+		</div>
+		<div class="infoPanel">
+			<p>
+
+				<select type="text" list="gamesList" id="loadGameComboBox">
+					<datalist id="gamesList">
+						<option value="">Select a ROM file to load...</option>
+						<option value="./1943 (U).nes">1943 (U)</option>
+						<option value="./Adventures of Lolo (U) [!].nes">Adventures of Lolo (U) [!]</option>
+						<option value="./Adventures of Lolo 2 (U).nes">Adventures of Lolo 2 (U)</option>
+						<option value="./Adventures of Lolo 3 (U).nes">Adventures of Lolo 3 (U)</option>
+						<option value="./Castlevania (U) (PRG 1).nes">Castlevania (U) (PRG 1)</option>
+						<option value="./Castlevania 2 - Simon's Quest (U).nes">Castlevania 2 - Simon's Quest (U)</option>
+						<option value="./Castlevania 3 - Dracula's Curse (U).nes">Castlevania 3 - Dracula's Curse (U)</option>
+						<option value="./Circus Caper (U).nes">Circus Caper (U)</option>
+						<option value="./Commando (U).nes">Commando (U)</option>
+						<option value="./Contra (U).nes">Contra (U)</option>
+						<option value="./Double Dragon (U).nes">Double Dragon (U)</option>
+						<option value="./Double Dragon 2 - The Revenge (U).nes">Double Dragon 2 - The Revenge (U)</option>
+						<option value="./Double Dragon 3 - The Sacred Stones (U).nes">Double Dragon 3 - The Sacred Stones (U)</option>
+						<option value="./Dragon Warrior 2 (U).nes">Dragon Warrior 2 (U)</option>
+						<option value="./Final Fantasy (U).nes">Final Fantasy (U)</option>
+						<option value="./Ikari 3 - The Rescue (U).nes">Ikari 3 - The Rescue (U)</option>
+						<option value="./Ikari Warriors (U) (PRG 0).nes">Ikari Warriors (U) (PRG 0)</option>
+						<option value="./Ikari Warriors (U) (PRG 1) [!].nes">Ikari Warriors (U) (PRG 1) [!]</option>
+						<option value="./Ikari Warriors 2 - Victory Road (U).nes">Ikari Warriors 2 - Victory Road (U)</option>
+						<option value="./Jackal (U).nes">Jackal (U)</option>
+						<option value="./Jackie Chan's Action Kung Fu (U).nes">Jackie Chan's Action Kung Fu (U)</option>
+						<option value="./King of Kings, The (U) (V1.3).nes">King of Kings, The (U) (V1.3)</option>
+						<option value="./Legend of Zelda, The (U) (PRG 0).nes">Legend of Zelda, The (U) (PRG 0)</option>
+						<option value="./Mega Man (U).nes">Mega Man (U)</option>
+						<option value="./Mega Man 2 (U).nes">Mega Man 2 (U)</option>
+						<option value="./Mega Man 3 (Prototype) (U) [!].nes">Mega Man 3 (Prototype) (U) [!]</option>
+						<option value="./Mega Man 3 (U) [!].nes">Mega Man 3 (U) [!]</option>
+						<option value="./Mega Man 4 (U).nes">Mega Man 4 (U)</option>
+						<option value="./Mega Man 5 (U).nes">Mega Man 5 (U)</option>
+						<option value="./Mega Man 6 (U).nes">Mega Man 6 (U)</option>
+						<option value="./Prince of Persia (U).nes">Prince of Persia (U)</option>
+						<option value="./Romance of the Three Kingdoms (U).nes">Romance of the Three Kingdoms (U)</option>
+						<option value="./Street Fighter 2010 (U).nes">Street Fighter 2010 (U)</option>
+						<option value="./Super Mario Bros - Duck Hunt (U).nes">Super Mario Bros - Duck Hunt (U)</option>
+						<option value="./Super Mario Bros - Duck Hunt - Track Meet (U).nes">Super Mario Bros - Duck Hunt - Track Meet (U)</option>
+						<option value="./Super Mario Bros 2 (U) (PRG 0).nes">Super Mario Bros 2 (U) (PRG 0)</option>
+						<option value="./Super Mario Bros 3 (U) (PRG 1).nes">Super Mario Bros 3 (U) (PRG 1)</option>
+						<option value="./Terminator2-JudgementDay(U).nes">Terminator2-JudgementDay(U)</option>
+						<option value="./Tetris (U) [!].nes">Tetris (U) [!]</option>
+						<option value="./Tetris 2 (U) [!].nes">Tetris 2 (U) [!]</option>
+						<option value="./TopGun(U).nes">TopGun(U)</option>
+						<option value="./TotalRecall(U).nes">TotalRecall(U)</option>
+						<option value="./TotallyRad(U).nes">TotallyRad(U)</option>
+						<option value="./Yoshi (U).nes">Yoshi (U)</option>
+						<option value="./Yoshi's Cookie (U).nes">Yoshi's Cookie (U)</option>
+					</datalist>
+				</select>
+			</p>
 		</div>
 		<div id="socialMediaPanel" class="socialMediaPanel">
 			<div id="twitter">
@@ -115,49 +196,7 @@
 		</div>
 		<div id="canvasWrapper" class="wrapper">
 		</div>
-		<div id="controlBar" class="controlBar">
-			<div id="debugBar" class="ui-widget-header ui-corner-all">
-				<button class="controlBarButton" id="debugControlBar_playOneFrameButton"></button>
-				<div class="controlBarSeperator"></div>
-				<button class="controlBarButton" id="debugControlBar_gameSpeedButton"></button>
-				<!--<button class="controlBarButton" id="debugControlBar_getFrameHashButton"></button>-->
-				<div class="controlBarSeperator"></div>
-				<span id="debugControlBar_encoding">
-					<input type="radio" id="debugControlBar_encodingNTSC" name="debugControlBar_encoding" value="NTSC"><label for="debugControlBar_encodingNTSC">NTSC</label>
-					<input type="radio" id="debugControlBar_encodingPAL" name="debugControlBar_encoding" value="PAL"><label for="debugControlBar_encodingPAL">PAL</label>
-				</span>
-				<div class="controlBarSeperator"></div>
-				<button class="controlBarButton" id="debugControlBar_selectTraceButton"></button>
-				<ul id="debugControlBar_traceMenu">
-					<li class="controlBarMenuButton" id="controlBar_cpuTraceParent"><input type="checkbox" id="controlBar_cpuTraceButton"><label for="controlBar_cpuTraceButton">CPU</label></li>
-					<li class="controlBarMenuButton" id="controlBar_cpuInstructionsTraceParent"><input type="checkbox" id="controlBar_cpuInstructionsTraceButton"><label for="controlBar_cpuInstructionsTraceButton">CPU Instructions</label></li>
-					<li class="controlBarMenuButton" id="controlBar_ppuTraceParent"><input type="checkbox" id="controlBar_ppuTraceButton"><label for="controlBar_ppuTraceButton">PPU</label></li>
-					<li class="controlBarMenuButton" id="controlBar_mapperTraceParent"><input type="checkbox" id="controlBar_mapperTraceButton"><label for="controlBar_mapperTraceButton">Mapper</label></li>
-					<li class="controlBarMenuButton" id="controlBar_allTraceParent"><input type="checkbox" id="controlBar_allTraceButton"><label for="controlBar_allTraceButton">All</label></li>
-				</ul>
-				<button class="controlBarButton" id="debugControlBar_traceButton"></button>
-			</div>
-			<div id="normalBar" class="ui-widget-header ui-corner-all">
-				<button class="controlBarButton" id="controlBar_loadRomButton"></button>
-				<div class="controlBarSeperator"></div>
-				<button class="controlBarButton" id="controlBar_resetButton"></button>
-				<div class="controlBarSeperator"></div>
-				<button class="controlBarButton" id="controlBar_playButton"></button>
-				<div class="controlBarSeperator"></div>
-				<button class="controlBarButton" id="controlBar_soundButton"></button>
-				<button class="controlBarButton" id="controlBar_screenshotButton"></button>
-				<div class="controlBarSeperator"></div>
-				<button class="controlBarButton" id="controlBar_quickSaveButton"></button>
-				<button class="controlBarButton" id="controlBar_quickLoadButton"></button>
-				<div class="controlBarSeperator"></div>
-				<input class="controlBarButton" type="checkbox" id="controlBar_debugButton"><label for="controlBar_debugButton"></label>
-				<div class="controlBarSeperator"></div>
-				<button class="controlBarButton" id="controlBar_keyboardRemap"></button>
-				<div class="controlBarSeperator"></div>
-				<button class="controlBarButton" id="controlBar_gameGenieButton"></button>
-				<button class="controlBarButton" id="controlBar_errorDisplay"></button>
-			</div>
-		</div>
+
 		<div id="controlBar_volumeSlider"></div>
 		<div id="controlBar_alertMessage"></div>
 		<div id="debugControlBar_gameSpeedSlider"></div>
@@ -216,8 +255,35 @@
 			</div>
 		</div>
 	</div>
+	<div id=buttondiv>
+	<div class="noselect" style="position: fixed; left:110px;bottom: 220px; width:80px;height: 80px;background: #880;font-size:80px;text-align:center;" 
+	ontouchstart="Gui.App._input.pressKeyBoard(4, true);" ontouchend="Gui.App._input.pressKeyBoard(4, false);" >^</div> 
+	<div class="noselect" style="position: fixed; left:20px;bottom: 220px; width:80px;height: 80px;background: #880;font-size:80px;text-align:center;" 
+	ontouchstart="Gui.App._input.pressKeyBoard(4, true);Gui.App._input.pressKeyBoard(6, true);" ontouchend="Gui.App._input.pressKeyBoard(4, false);Gui.App._input.pressKeyBoard(6, false);" ></div> 
+	<div class="noselect" style="position: fixed; left:200px;bottom: 220px; width:80px;height: 80px;background: #880;font-size:80px;text-align:center;" 
+	ontouchstart="Gui.App._input.pressKeyBoard(4, true);Gui.App._input.pressKeyBoard(7, true);" ontouchend="Gui.App._input.pressKeyBoard(4, false);Gui.App._input.pressKeyBoard(7, false);" ></div> 
+	<div class="noselect" style="position: fixed; left:20px;bottom: 130px;width:80px;height: 80px;background: #880;font-size:80px;text-align:center;" 
+	ontouchstart="Gui.App._input.pressKeyBoard(6, true);" ontouchend="Gui.App._input.pressKeyBoard(6, false);" >&lt;</div> 
+	<div class="noselect" style="position: fixed; left:110px;bottom: 40px;width:80px;height: 80px;background: #880;font-size:80px;text-align:center;"
+	ontouchstart="Gui.App._input.pressKeyBoard(5, true);" ontouchend="Gui.App._input.pressKeyBoard(5, false);" >v</div> 
+	<div class="noselect" style="position: fixed; left:200px;bottom: 130px;width:80px;height: 80px;background: #880;font-size:80px;text-align:center;"
+	ontouchstart="Gui.App._input.pressKeyBoard(7, true);" ontouchend="Gui.App._input.pressKeyBoard(7, false);">&gt;</div> 
+	<div class="noselect" style="position: fixed; left:20px;bottom: 40px; width:80px;height: 80px;background: #880;font-size:80px;text-align:center;" 
+	ontouchstart="Gui.App._input.pressKeyBoard(5, true);Gui.App._input.pressKeyBoard(6, true);" ontouchend="Gui.App._input.pressKeyBoard(5, false);Gui.App._input.pressKeyBoard(6, false);" ></div> 
+	<div class="noselect" style="position: fixed; left:200px;bottom: 40px; width:80px;height: 80px;background: #880;font-size:80px;text-align:center;" 
+	ontouchstart="Gui.App._input.pressKeyBoard(5, true);Gui.App._input.pressKeyBoard(7, true);" ontouchend="Gui.App._input.pressKeyBoard(5, false);Gui.App._input.pressKeyBoard(7, false);" ></div> 
 
+	<div class="noselect" style="position: fixed; right:150px;bottom: 200px; width:120px;height: 60px;background: #E85;font-size:35px;text-align:center;" onmousedown="Gui.App._input.pressKeyBoard(2, true);" onmouseup="Gui.App._input.pressKeyBoard(2, false);"
+	ontouchstart="Gui.App._input.pressKeyBoard(2, true);" ontouchend="Gui.App._input.pressKeyBoard(2, false);" >Select</div> 
+	<div class="noselect" style="position: fixed; right:20px;bottom: 200px;width:120px;height: 60px;background: #E85;font-size:35px;text-align:center;" onmousedown="Gui.App._input.pressKeyBoard(3, true);" onmouseup="Gui.App._input.pressKeyBoard(3, false);" 
+	ontouchstart="Gui.App._input.pressKeyBoard(3, true);" ontouchend="Gui.App._input.pressKeyBoard(3, false);" >Start</div> 
+	<div class="noselect" style="position: fixed; right:120px;bottom: 80px;width:90px;height: 90px;background: #532;color: #EEE;font-size:80px;text-align:center;"  onmousedown="Gui.App._input.pressKeyBoard(0, true);" onmouseup="Gui.App._input.pressKeyBoard(0, false);" 
+	ontouchstart="Gui.App._input.pressKeyBoard(0, true);" ontouchend="Gui.App._input.pressKeyBoard(0, false);" >A</div> 
+	<div class="noselect" style="position: fixed; right:20px;bottom: 80px;width:90px;height: 90px;background: #532;color: #EEE;font-size:80px;text-align:center;"  onmousedown="Gui.App._input.pressKeyBoard(1, true);" onmouseup="Gui.App._input.pressKeyBoard(1, false);"
+	ontouchstart="Gui.App._input.pressKeyBoard(1, true);" ontouchend="Gui.App._input.pressKeyBoard(1, false);" >B</div> 
 	<!-- build:js js/nes.components.min.js -->
+	</div>
+	
 	<script type="text/javascript" src="js/polyfills/arrayPolyfills.js"></script>
 	<script type="text/javascript" src="js/polyfills/typedarrays.js"></script>
 	<script type="text/javascript" src="js/polyfills/setImmediatePolyfill.js"></script>
@@ -332,5 +398,13 @@
 	<script type="text/javascript" src="js/saveStateManager.js"></script>
 	<script type="text/javascript" src="js/browserStart.js"></script>
 	<!-- endbuild -->
+
+	<script>
+		if (!detectMob()) {
+			document.getElementById("buttondiv").style.display = "none";
+		} else {
+			document.getElementById("infoPanel").style.display = "none";
+		}
+	</script>
 </body>
 </html>
