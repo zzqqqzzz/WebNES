@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "global": "^4.4.0",
+    "gulp": "^4.0.2",
     "node.extend": "~1.0.10"
   },
   "devDependencies": {

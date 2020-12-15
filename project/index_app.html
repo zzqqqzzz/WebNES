@@ -404,6 +404,11 @@
 			document.getElementById("buttondiv").style.display = "none";
 		} else {
 			document.getElementById("infoPanel").style.display = "none";
+			
+			if(window.innerHeight > window.innerWidth){
+				var cmbGameList = document.getElementById("loadGameComboBox");
+				cmbGameList.className ="hcenter";
+			}
 		}
 	</script>
 </body>

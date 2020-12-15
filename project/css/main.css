@@ -12,6 +12,27 @@
 
 	.wrapper canvas {
 		box-shadow: 2px 2px 5px 0px rgba(20,20,20,1);
+		-webkit-touch-callout: none; /* iOS Safari */
+			-webkit-user-select: none; /* Safari */
+			 -khtml-user-select: none; /* Konqueror HTML */
+				 -moz-user-select: none; /* Old versions of Firefox */
+					-ms-user-select: none; /* Internet Explorer/Edge */
+							user-select: none; /* Non-prefixed version, currently
+																		supported by Chrome, Edge, Opera and Firefox */
+
+		 touch-action: manipulation;
+	}
+
+	.noselect {
+		-webkit-touch-callout: none; /* iOS Safari */
+			-webkit-user-select: none; /* Safari */
+			 -khtml-user-select: none; /* Konqueror HTML */
+				 -moz-user-select: none; /* Old versions of Firefox */
+					-ms-user-select: none; /* Internet Explorer/Edge */
+							user-select: none; /* Non-prefixed version, currently
+																		supported by Chrome, Edge, Opera and Firefox */
+
+		 touch-action: manipulation;
 	}
 	
 	.ui-menu { position: absolute; width: 150px; }
@@ -31,7 +52,7 @@
 	.controlBar {
 		visibility: hidden;
 		display: inline-block;
-		position:absolute
+		position:absolute;
 		bottom:30px;
 	}
 	
@@ -80,3 +101,11 @@
 	}
 	
 	.hideJQueryTitleBar .ui-dialog-titlebar {display:none}
+
+	.hcenter {
+		position: fixed;
+		left: 50%;
+		bottom: 350px;
+		transform: translateX(-50%);
+		font-size: 25px;
+	}

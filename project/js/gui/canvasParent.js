@@ -61,13 +61,20 @@ this.Gui = this.Gui || {};
 		var resizeType = 'keepAspectRatio';
 		
 		if ( resizeType === 'keepAspectRatio' ) {
-		
 			var aspectRatio = SCREEN_WIDTH / SCREEN_HEIGHT;
-			var newWidth = aspectRatio * parentHeight;
-		
-			this._canvasElement.width = Math.floor( newWidth );
-			this._canvasElement.height = parentHeight;
 
+			if (parentWidth > parentHeight) {
+			
+				var newWidth = aspectRatio * parentHeight;
+			
+				this._canvasElement.width = Math.floor( newWidth );
+				this._canvasElement.height = parentHeight;
+			} else {
+				var newWidth = parentWidth * 0.9;
+				var newHeight = newWidth / aspectRatio;
+				this._canvasElement.width = newWidth;
+				this._canvasElement.height = newHeight;
+			}
 			this._eventBus.invoke( 'resize' );
 		}
 	};

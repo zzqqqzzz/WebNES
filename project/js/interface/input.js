@@ -227,6 +227,10 @@ this.Gui = this.Gui || {};
 		}
 	};
 	
+	Input.prototype.pressKeyBoard = function (padKey, pressed) {
+		var joypad = this._mainboard.inputdevicebus.getJoypad( 0 );
+		joypad.pressButton( padKey, pressed );
+	}
 	
 	Input.prototype._doKeyboardButtonPress = function( keyCode, pressed ) {
 	
